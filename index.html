@@ -49,45 +49,34 @@
         rgba(0, 0, 0, 0.25) 60%,
         rgba(0, 0, 0, 0) 100%
       );
-    }
 
-    /* ANIMASJONSGRUPPE */
-    h1, p {
+      /* 🎬 alt kommer inn samtidig */
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s ease forwards;
+      animation: fadeUp 1.5s ease forwards;
+      animation-delay: 0.8s;
     }
 
-    /* 1️⃣ overskrift */
     h1 {
       margin: 0;
       font-size: 2.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      animation-delay: 0.8s;
     }
 
-    /* 2️⃣ linje 1 (stor) */
-    p:nth-of-type(1) {
+    p {
       margin: 14px 0;
-      font-size: 3.6rem; /* 🔥 dobbel størrelse */
-      animation-delay: 1.6s;
     }
 
-    /* 3️⃣ linje 2 (stor) */
+    /* 🔥 samme størrelse som før */
+    p:nth-of-type(1),
     p:nth-of-type(2) {
-      margin: 14px 0;
-      font-size: 3.6rem; /* 🔥 dobbel størrelse */
-      animation-delay: 2.2s;
+      font-size: 3.6rem;
     }
 
-    /* 4️⃣ linje 3 (stor, men litt mindre fokus) */
     p:nth-of-type(3) {
-      margin: 14px 0;
       font-size: 2.6rem;
       opacity: 0.9;
-      animation-delay: 2.8s;
     }
 
     /* ANIMASJONER */
@@ -100,9 +89,13 @@
     }
 
     @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, -35%);
       }
     }
   </style>
