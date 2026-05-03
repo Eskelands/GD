@@ -22,56 +22,69 @@
       object-fit: cover;
       object-position: center top;
       z-index: 0;
+
+      opacity: 0;
+      animation: fadeInImage 2s ease forwards;
     }
 
-    /* GLASS CONTAINER */
+    /* 🌫 HERO GRADIENT (bedre lesbarhet) */
+    .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      z-index: 1;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0)
+      );
+    }
+
+    /* TEKST HERO */
     .overlay {
       position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      width: 90%;
-      max-width: 800px;
+      top: 0;
+      width: 100%;
       text-align: center;
-
-      color: black;
       z-index: 2;
 
-      padding: 25px 20px;
+      color: white;
+      padding-top: 40px;
 
-      /* 🌫 glassmorphism */
-      background: rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-
-      /* fade-in */
       opacity: 0;
-      transform: translate(-50%, -20px);
+      transform: translateY(-20px);
       animation: fadeInText 2s ease forwards;
       animation-delay: 0.8s;
     }
 
     h1 {
       margin: 0;
-      font-size: 2.4rem;
-      letter-spacing: 0.5px;
+      font-size: 5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     p {
-      margin: 10px 0;
-      font-size: 1rem;
-      line-height: 1.5;
+      margin: 12px 0;
+      font-size: 1.3rem;
+      opacity: 0.9;
     }
 
-    /* ANIMASJON */
+    /* 🎬 ANIMASJONER */
+    @keyframes fadeInImage {
+      to {
+        opacity: 1;
+      }
+    }
+
     @keyframes fadeInText {
       to {
         opacity: 1;
-        transform: translate(-50%, 0);
+        transform: translateY(0);
       }
     }
   </style>
@@ -81,11 +94,15 @@
 
   <img src="golddiggers.jpeg" alt="Bilde">
 
+  <!-- gradient overlay -->
+  <div class="gradient"></div>
+
+  <!-- hero tekst -->
   <div class="overlay">
-    <h1>Support your local gold diggers!</h1>
-    <p>We just love them</p>
+    <h1>We just love them</h1>
     <p>and will always support them heavily.</p>
-    <p>Per Eskeland - Chairman and Founder / golddiggers.no</p>
+    <p>Support your local gold diggers!</p>
+    <p>Per Eskeland - Chairman and Founder, golddiggers.no</p>
   </div>
 
 </body>
