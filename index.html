@@ -28,7 +28,7 @@
       animation: fadeInImage 2s ease forwards, zoomIn 10s ease forwards;
     }
 
-    /* 🎯 TEKST + LOKAL GRADIENT */
+    /* TEKSTBOKS */
     .overlay {
       position: absolute;
       top: 50%;
@@ -41,7 +41,6 @@
       width: 90%;
       max-width: 800px;
 
-      /* 🌫 lokal gradient bak tekst */
       padding: 40px 20px;
       border-radius: 20px;
 
@@ -53,12 +52,14 @@
       );
     }
 
+    /* 🧠 felles animasjon */
     h1, p {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeUp 1s ease forwards;
     }
 
+    /* 1️⃣ overskrift først */
     h1 {
       margin: 0;
       font-size: 2.8rem;
@@ -66,20 +67,29 @@
       text-transform: uppercase;
       letter-spacing: 1px;
 
-      animation-delay: 1s;
+      animation-delay: 0.8s;
     }
 
-    p {
+    /* 2️⃣ linje 1 */
+    p:nth-of-type(1) {
       margin: 14px 0;
       font-size: 1.8rem;
+      animation-delay: 1.6s;
     }
 
-    p:nth-of-type(1) { animation-delay: 1.6s; }
-    p:nth-of-type(2) { animation-delay: 2.2s; }
+    /* 3️⃣ linje 2 */
+    p:nth-of-type(2) {
+      margin: 14px 0;
+      font-size: 1.8rem;
+      animation-delay: 2.2s;
+    }
+
+    /* 4️⃣ linje 3 */
     p:nth-of-type(3) {
-      animation-delay: 2.8s;
+      margin: 14px 0;
       font-size: 1.3rem;
       opacity: 0.9;
+      animation-delay: 2.8s;
     }
 
     /* ANIMASJONER */
@@ -108,7 +118,7 @@
     <h1>We just love them</h1>
     <p>and will always support them heavily.</p>
     <p>Support your local gold diggers!</p>
-    <i>Per Eskeland - Chairman and Founder, golddiggers.no</i>
+    <p>Per Eskeland - Chairman and Founder, golddiggers.no</p>
   </div>
 
 </body>
