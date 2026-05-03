@@ -14,7 +14,7 @@
       background: black;
     }
 
-    /* BAKGRUNNSBILDE */
+    /* 📸 BILDE (mobil først) */
     img {
       position: absolute;
       width: 100%;
@@ -28,7 +28,15 @@
       animation: fadeInImage 2s ease forwards, zoomIn 10s ease forwards;
     }
 
-    /* TEKST NEDERST */
+    /* 💻 PC: vis hele bildet */
+    @media (min-width: 900px) {
+      img {
+        object-fit: contain;
+        background: black;
+      }
+    }
+
+    /* 📝 TEKST NEDERST */
     .overlay {
       position: absolute;
       bottom: 5%;
@@ -55,7 +63,7 @@
       animation-delay: 0.8s;
     }
 
-    /* Linje 1, 2 og 4 */
+    /* 🔠 Linje 1, 2 og 4 */
     h1,
     p:nth-of-type(1),
     p:nth-of-type(3) {
@@ -69,25 +77,23 @@
       letter-spacing: 1px;
     }
 
-    /* 🔥 Linje 3 (highlight + glow + animasjon) */
+    /* 🔥 Linje 3 (highlight) */
     p:nth-of-type(2) {
       font-size: 3.2rem;
       font-weight: 700;
       margin: 16px 0;
       position: relative;
 
-      /* glow */
       text-shadow:
         0 0 10px rgba(255,255,255,0.4),
         0 0 20px rgba(255,255,255,0.3);
 
-      /* animasjon */
       transform: scale(0.95);
       animation: popIn 1s ease forwards;
       animation-delay: 1.2s;
     }
 
-    /* subtil highlight bak */
+    /* ✨ Highlight bak */
     p:nth-of-type(2)::before {
       content: "";
       position: absolute;
@@ -105,7 +111,7 @@
       border-radius: 10px;
     }
 
-    /* ANIMASJONER */
+    /* 🎬 ANIMASJONER */
     @keyframes fadeInImage {
       to { opacity: 1; }
     }
@@ -130,6 +136,20 @@
         transform: scale(1);
       }
     }
+
+    /* 📱 Litt bedre mobil */
+    @media (max-width: 600px) {
+      h1,
+      p:nth-of-type(1),
+      p:nth-of-type(3) {
+        font-size: 1.6rem;
+      }
+
+      p:nth-of-type(2) {
+        font-size: 2.2rem;
+      }
+    }
+
   </style>
 </head>
 
