@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Min side</title>
 
+  <!-- Moderne, stram font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       height: 100vh;
       overflow: hidden;
-      font-family: Arial, sans-serif;
+      font-family: "Inter", sans-serif; /* ⬅️ ny font */
       position: relative;
       background: black;
     }
@@ -57,18 +62,19 @@
     }
 
     .line {
-      margin: 6px 0; /* ⬅️ tettere linjer */
+      margin: 6px 0;
     }
 
-    /* Vanlige linjer */
+    /* Linje 1, 2 og 4 (mindre tekst) */
     .line-normal {
-      font-size: 1.8rem; /* mindre tekst */
-      font-weight: 600;
+      font-size: 1.4rem;  /* ⬅️ redusert */
+      font-weight: 500;
+      letter-spacing: 0.2px;
     }
 
     /* 🔥 Highlight (LINJE 3) */
     .highlight {
-      font-size: 2rem; /* litt større enn resten */
+      font-size: 2rem;
       font-weight: 700;
       margin: 10px 0;
       position: relative;
@@ -129,11 +135,11 @@
     /* 📱 MOBIL */
     @media (max-width: 600px) {
       .line-normal {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
       }
 
       .highlight {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         white-space: normal;
       }
     }
