@@ -28,32 +28,29 @@
       animation: fadeInImage 2s ease forwards, zoomIn 10s ease forwards;
     }
 
-    /* GRADIENT */
-    .gradient {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.6)
-      );
-    }
-
-    /* 🎯 TEKST LITT NED I BILDET */
+    /* 🎯 TEKST + LOKAL GRADIENT */
     .overlay {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -35%);
-      text-align: center;
 
+      text-align: center;
       z-index: 2;
       color: white;
       width: 90%;
       max-width: 800px;
+
+      /* 🌫 lokal gradient bak tekst */
+      padding: 40px 20px;
+      border-radius: 20px;
+
+      background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.25) 60%,
+        rgba(0, 0, 0, 0) 100%
+      );
     }
 
     h1, p {
@@ -106,8 +103,6 @@
 <body>
 
   <img src="golddiggers.jpeg" alt="Bilde">
-
-  <div class="gradient"></div>
 
   <div class="overlay">
     <h1>We just love them</h1>
