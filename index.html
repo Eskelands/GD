@@ -27,7 +27,7 @@
       animation: fadeInImage 2s ease forwards;
     }
 
-    /* 🌫 HERO GRADIENT (bedre lesbarhet) */
+    /* GRADIENT */
     .gradient {
       position: absolute;
       top: 0;
@@ -43,7 +43,7 @@
       );
     }
 
-    /* TEKST HERO */
+    /* TEKST */
     .overlay {
       position: absolute;
       top: 0;
@@ -60,21 +60,23 @@
       animation-delay: 0.8s;
     }
 
+    /* 🔽 MINDRE OVERSKRIFT */
     h1 {
       margin: 0;
-      font-size: 5rem;
+      font-size: 2.8rem; /* redusert fra 5rem */
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
+    /* 🔼 STØRRE TEKST */
     p {
-      margin: 12px 0;
-      font-size: 1.3rem;
-      opacity: 0.9;
+      margin: 14px 0;
+      font-size: 1.8rem; /* større */
+      opacity: 0.95;
     }
 
-    /* 🎬 ANIMASJONER */
+    /* ANIMASJONER */
     @keyframes fadeInImage {
       to {
         opacity: 1;
@@ -94,10 +96,8 @@
 
   <img src="golddiggers.jpeg" alt="Bilde">
 
-  <!-- gradient overlay -->
   <div class="gradient"></div>
 
-  <!-- hero tekst -->
   <div class="overlay">
     <h1>We just love them</h1>
     <p>and will always support them heavily.</p>
