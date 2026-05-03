@@ -14,7 +14,7 @@
       background: black;
     }
 
-    /* 🎥 ZOOM-IN BAKGRUNN */
+    /* BAKGRUNNSBILDE */
     img {
       position: absolute;
       width: 100%;
@@ -28,7 +28,7 @@
       animation: fadeInImage 2s ease forwards, zoomIn 10s ease forwards;
     }
 
-    /* 🌫 GRADIENT */
+    /* GRADIENT */
     .gradient {
       position: absolute;
       inset: 0;
@@ -42,10 +42,10 @@
       );
     }
 
-    /* 🎯 MIDTSTILT TEKST */
+    /* 🎯 TEKST LITT NED I BILDET */
     .overlay {
       position: absolute;
-      top: 50%;
+      top: 58%; /* 🔥 flyttet ned fra 50% */
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
@@ -77,21 +77,15 @@
       font-size: 1.8rem;
     }
 
-    p:nth-of-type(1) {
-      animation-delay: 1.6s;
-    }
-
-    p:nth-of-type(2) {
-      animation-delay: 2.2s;
-    }
-
+    p:nth-of-type(1) { animation-delay: 1.6s; }
+    p:nth-of-type(2) { animation-delay: 2.2s; }
     p:nth-of-type(3) {
       animation-delay: 2.8s;
       font-size: 1.3rem;
       opacity: 0.9;
     }
 
-    /* 🎬 ANIMASJONER */
+    /* ANIMASJONER */
     @keyframes fadeInImage {
       to { opacity: 1; }
     }
@@ -119,7 +113,7 @@
     <h1>We just love them</h1>
     <p>and will always support them heavily.</p>
     <p>Support your local gold diggers!</p>
-    <i>Per Eskeland - Chairman and Founder / golddiggers.no</i>
+    <p>Per Eskeland - Chairman and Founder, golddiggers.no</p>
   </div>
 
 </body>
