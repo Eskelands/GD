@@ -40,13 +40,13 @@
       z-index: 2;
       color: white;
       width: 90%;
-      max-width: 900px;
+      max-width: 800px;
 
-      padding: 20px;
+      padding: 14px;
 
       background: radial-gradient(
         ellipse at center,
-        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.55) 0%,
         rgba(0, 0, 0, 0.25) 60%,
         rgba(0, 0, 0, 0) 100%
       );
@@ -57,26 +57,26 @@
     }
 
     .line {
-      margin: 10px 0;
+      margin: 6px 0; /* ⬅️ tettere linjer */
     }
 
-    /* Vanlige linjer (1 og 2 nå) */
+    /* Vanlige linjer */
     .line-normal {
-      font-size: 2.2rem;
+      font-size: 1.8rem; /* mindre tekst */
       font-weight: 600;
     }
 
     /* 🔥 Highlight (LINJE 3) */
     .highlight {
-      font-size: 2.4rem;
+      font-size: 2rem; /* litt større enn resten */
       font-weight: 700;
-      margin: 16px 0;
+      margin: 10px 0;
       position: relative;
       white-space: nowrap;
 
       text-shadow:
-        0 0 10px rgba(255,255,255,0.4),
-        0 0 20px rgba(255,255,255,0.3);
+        0 0 10px rgba(255,255,255,0.35),
+        0 0 18px rgba(255,255,255,0.25);
 
       transform: scale(0.95);
       animation: popIn 1s ease forwards;
@@ -93,7 +93,7 @@
       height: 120%;
       background: radial-gradient(
         ellipse,
-        rgba(255,255,255,0.15),
+        rgba(255,255,255,0.12),
         rgba(255,255,255,0)
       );
       z-index: -1;
@@ -129,11 +129,11 @@
     /* 📱 MOBIL */
     @media (max-width: 600px) {
       .line-normal {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
 
       .highlight {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         white-space: normal;
       }
     }
