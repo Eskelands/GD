@@ -28,12 +28,12 @@
       animation: fadeInImage 2s ease forwards, zoomIn 10s ease forwards;
     }
 
-    /* TEKSTBOKS */
+    /* TEKST NEDERST */
     .overlay {
       position: absolute;
-      top: 50%;
+      bottom: 5%; /* 🔥 flyttet til bunn */
       left: 50%;
-      transform: translate(-50%, -35%);
+      transform: translateX(-50%);
 
       text-align: center;
       z-index: 2;
@@ -41,7 +41,7 @@
       width: 90%;
       max-width: 800px;
 
-      padding: 40px 20px;
+      padding: 20px;
 
       background: radial-gradient(
         ellipse at center,
@@ -50,7 +50,6 @@
         rgba(0, 0, 0, 0) 100%
       );
 
-      /* 🎬 alt kommer inn samtidig */
       opacity: 0;
       animation: fadeUp 1.5s ease forwards;
       animation-delay: 0.8s;
@@ -65,17 +64,17 @@
     }
 
     p {
-      margin: 14px 0;
+      margin: 10px 0;
     }
 
-    /* 🔥 samme størrelse som før */
+    /* 🔽 mindre linje 2 og 3 */
     p:nth-of-type(1),
     p:nth-of-type(2) {
-      font-size: 3.6rem;
+      font-size: 2rem;
     }
 
     p:nth-of-type(3) {
-      font-size: 2.6rem;
+      font-size: 1.4rem;
       opacity: 0.9;
     }
 
@@ -91,11 +90,11 @@
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translate(-50%, -40%);
+        transform: translate(-50%, 20px);
       }
       to {
         opacity: 1;
-        transform: translate(-50%, -35%);
+        transform: translate(-50%, 0);
       }
     }
   </style>
@@ -103,7 +102,7 @@
 
 <body>
 
-  <img src="plane.jpeg" alt="Bilde">
+  <img src="golddiggers.jpeg" alt="Bilde">
 
   <div class="overlay">
     <h1>We just love them</h1>
