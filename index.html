@@ -2,6 +2,7 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Min side</title>
 
   <style>
@@ -15,7 +16,7 @@
     }
 
     /* BAKGRUNNSBILDE */
-    img {
+    .hero-image {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -28,12 +29,12 @@
       animation: fadeInImage 2s ease forwards, zoomIn 10s ease forwards;
     }
 
-    /* TEKST NEDERST */
+    /* TEKSTBOKS */
     .overlay {
       position: absolute;
-      bottom: 5%;
+      top: 60%; /* ⬅️ Flyttet opp mot midten */
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
 
       text-align: center;
       z-index: 2;
@@ -55,24 +56,22 @@
       animation-delay: 0.8s;
     }
 
-    /* Linje 1, 3 og 4 */
-    p:nth-of-type(1),
-    p:nth-of-type(3),
-    p:nth-of-type(4) {
-      font-size: 2.2rem;
+    .line {
       margin: 10px 0;
+    }
+
+    .line-1,
+    .line-3,
+    .line-4 {
+      font-size: 2.2rem;
       font-weight: 600;
     }
 
-    /* 🔥 Linje 2 (highlight – én linje på PC) */
-    p:nth-of-type(2) {
+    .highlight {
       font-size: 2.4rem;
       font-weight: 700;
       margin: 16px 0;
-      position: relative;
-
       white-space: nowrap;
-
       text-shadow:
         0 0 10px rgba(255,255,255,0.4),
         0 0 20px rgba(255,255,255,0.3);
@@ -80,10 +79,10 @@
       transform: scale(0.95);
       animation: popIn 1s ease forwards;
       animation-delay: 1.2s;
+      position: relative;
     }
 
-    /* Highlight bak */
-    p:nth-of-type(2)::before {
+    .highlight::before {
       content: "";
       position: absolute;
       left: 50%;
@@ -126,17 +125,17 @@
       }
     }
 
-    /* 📱 Mobiltilpasning */
+    /* 📱 MOBIL */
     @media (max-width: 600px) {
-      p:nth-of-type(1),
-      p:nth-of-type(3),
-      p:nth-of-type(4) {
+      .line-1,
+      .line-3,
+      .line-4 {
         font-size: 1.4rem;
       }
 
-      p:nth-of-type(2) {
+      .highlight {
         font-size: 1.6rem;
-        white-space: normal; /* tillat linjebrudd */
+        white-space: normal;
       }
     }
 
@@ -145,13 +144,13 @@
 
 <body>
 
-  <img src="plane.jpeg" alt="Bilde">
+  <img class="hero-image" src="plane.jpeg" alt="Bilde">
 
   <div class="overlay">
-    <p>We just love them</p>
-    <p>and will always support them heavily.</p>
-    <p>Support your local gold diggers!</p>
-    <p>Per Eskeland - Chairman and Founder - golddiggers.no</p>
+    <p class="line line-1">We just love them</p>
+    <p class="line highlight">and will always support them heavily.</p>
+    <p class="line line-3">Support your local gold diggers!</p>
+    <p class="line line-4">Per Eskeland - Chairman and Founder - golddiggers.no</p>
   </div>
 
 </body>
