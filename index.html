@@ -32,7 +32,7 @@
     /* TEKSTBOKS */
     .overlay {
       position: absolute;
-      top: 60%; /* ⬅️ Flyttet opp mot midten */
+      top: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
 
@@ -60,18 +60,20 @@
       margin: 10px 0;
     }
 
-    .line-1,
-    .line-3,
-    .line-4 {
+    /* Vanlige linjer (1 og 2 nå) */
+    .line-normal {
       font-size: 2.2rem;
       font-weight: 600;
     }
 
+    /* 🔥 Highlight (LINJE 3) */
     .highlight {
       font-size: 2.4rem;
       font-weight: 700;
       margin: 16px 0;
+      position: relative;
       white-space: nowrap;
+
       text-shadow:
         0 0 10px rgba(255,255,255,0.4),
         0 0 20px rgba(255,255,255,0.3);
@@ -79,7 +81,6 @@
       transform: scale(0.95);
       animation: popIn 1s ease forwards;
       animation-delay: 1.2s;
-      position: relative;
     }
 
     .highlight::before {
@@ -127,9 +128,7 @@
 
     /* 📱 MOBIL */
     @media (max-width: 600px) {
-      .line-1,
-      .line-3,
-      .line-4 {
+      .line-normal {
         font-size: 1.4rem;
       }
 
@@ -147,10 +146,10 @@
   <img class="hero-image" src="plane.jpeg" alt="Bilde">
 
   <div class="overlay">
-    <p class="line line-1">We just love them</p>
-    <p class="line highlight">and will always support them heavily.</p>
-    <p class="line line-3">Support your local gold diggers!</p>
-    <p class="line line-4">Per Eskeland - Chairman and Founder - golddiggers.no</p>
+    <p class="line line-normal">We just love them</p>
+    <p class="line line-normal">and will always support them heavily.</p>
+    <p class="line highlight">Support your local gold diggers!</p>
+    <p class="line line-normal">Per Eskeland - Chairman and Founder - golddiggers.no</p>
   </div>
 
 </body>
