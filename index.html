@@ -31,7 +31,7 @@
     /* TEKST NEDERST */
     .overlay {
       position: absolute;
-      bottom: 5%; /* 🔥 flyttet til bunn */
+      bottom: 5%;
       left: 50%;
       transform: translateX(-50%);
 
@@ -55,27 +55,54 @@
       animation-delay: 0.8s;
     }
 
+    /* Linje 1, 2 og 4 */
+    h1,
+    p:nth-of-type(1),
+    p:nth-of-type(3) {
+      font-size: 2.2rem;
+      margin: 10px 0;
+      font-weight: 600;
+    }
+
     h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-    p {
-      margin: 10px 0;
-    }
-
-    /* 🔽 mindre linje 2 og 3 */
-    p:nth-of-type(1),
+    /* 🔥 Linje 3 (highlight + glow + animasjon) */
     p:nth-of-type(2) {
-      font-size: 2rem;
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin: 16px 0;
+      position: relative;
+
+      /* glow */
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.4),
+        0 0 20px rgba(255,255,255,0.3);
+
+      /* animasjon */
+      transform: scale(0.95);
+      animation: popIn 1s ease forwards;
+      animation-delay: 1.2s;
     }
 
-    p:nth-of-type(3) {
-      font-size: 1.4rem;
-      opacity: 0.9;
+    /* subtil highlight bak */
+    p:nth-of-type(2)::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%;
+      height: 120%;
+      background: radial-gradient(
+        ellipse,
+        rgba(255,255,255,0.15),
+        rgba(255,255,255,0)
+      );
+      z-index: -1;
+      border-radius: 10px;
     }
 
     /* ANIMASJONER */
@@ -95,6 +122,12 @@
       to {
         opacity: 1;
         transform: translate(-50%, 0);
+      }
+    }
+
+    @keyframes popIn {
+      to {
+        transform: scale(1);
       }
     }
   </style>
