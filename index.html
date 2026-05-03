@@ -14,7 +14,7 @@
       background: black;
     }
 
-    /* BAKGRUNNSBILDE */
+    /* 🎥 ZOOM-IN BAKGRUNN */
     img {
       position: absolute;
       width: 100%;
@@ -24,16 +24,14 @@
       z-index: 0;
 
       opacity: 0;
-      animation: fadeInImage 2s ease forwards;
+      transform: scale(1.1);
+      animation: fadeInImage 2s ease forwards, zoomIn 10s ease forwards;
     }
 
-    /* GRADIENT */
+    /* 🌫 GRADIENT */
     .gradient {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       z-index: 1;
 
       background: linear-gradient(
@@ -44,7 +42,7 @@
       );
     }
 
-    /* 🔥 MIDTSTILT TEKST */
+    /* 🎯 MIDTSTILT TEKST */
     .overlay {
       position: absolute;
       top: 50%;
@@ -54,36 +52,58 @@
 
       z-index: 2;
       color: white;
+      width: 90%;
+      max-width: 800px;
+    }
 
+    h1, p {
       opacity: 0;
-      animation: fadeInText 2s ease forwards;
-      animation-delay: 0.8s;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
     }
 
     h1 {
       margin: 0;
       font-size: 2.8rem;
       font-weight: 700;
-      letter-spacing: 1px;
       text-transform: uppercase;
+      letter-spacing: 1px;
+
+      animation-delay: 1s;
     }
 
     p {
       margin: 14px 0;
       font-size: 1.8rem;
-      opacity: 0.95;
     }
 
-    /* ANIMASJONER */
+    p:nth-of-type(1) {
+      animation-delay: 1.6s;
+    }
+
+    p:nth-of-type(2) {
+      animation-delay: 2.2s;
+    }
+
+    p:nth-of-type(3) {
+      animation-delay: 2.8s;
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    /* 🎬 ANIMASJONER */
     @keyframes fadeInImage {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
-    @keyframes fadeInText {
+    @keyframes zoomIn {
+      to { transform: scale(1); }
+    }
+
+    @keyframes fadeUp {
       to {
         opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
